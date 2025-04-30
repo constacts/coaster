@@ -18,13 +18,13 @@ and the Flutter guide for
     <div style="margin-left: 20px;">TEA <span style="background-color: #f6e5c9; padding: 2px 4px; border-radius: 4px;">Coaster</span> is a Flutter package that implements The Elm Architecture (TEA) pattern, bringing the elegance of Elm's architecture to Flutter development.</div>
 </div>
 
-
 ## Features
 
-- Model-View-Update (MVU) architecture pattern
-- Command pattern for side effects
-- Subscription system for event handling
-
+- **Model-View-Update (MVU) Architecture**: A clean and predictable state management pattern
+- **Command Pattern**: Handle side effects in a structured way
+- **Subscription System**: Manage event streams and subscriptions
+- **Type Safety**: Full type safety with Dart's strong typing system
+- **Testability**: Easy to test with clear separation of concerns
 
 ## Getting Started
 
@@ -37,15 +37,94 @@ dependencies:
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### Basic Counter Example
+
+Here's a simple counter application using TEA Coaster:
 
 ```dart
-const like = 'sample';
+import 'package:flutter/material.dart';
+import 'package:coaster/coaster.dart';
+
+// Define your model
+class CounterModel {
+  final int count;
+  
+  CounterModel({required this.count});
+}
+
+// Define your messages
+enum CounterMessage { increment, decrement }
+
+// Create your update function
+CounterModel update(CounterModel model, CounterMessage message) {
+  switch (message) {
+    case CounterMessage.increment:
+      return CounterModel(count: model.count + 1);
+    case CounterMessage.decrement:
+      return CounterModel(count: model.count - 1);
+  }
+}
+
+// Create your view
+Widget view(CounterModel model, Dispatch<CounterMessage> dispatch) {
+  return Scaffold(
+    appBar: AppBar(title: Text('Counter Example')),
+    body: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('Count: ${model.count}', style: TextStyle(fontSize: 24)),
+          SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () => dispatch(CounterMessage.increment),
+                child: Text('Increment'),
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: () => dispatch(CounterMessage.decrement),
+                child: Text('Decrement'),
+              ),
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+// Use the Coaster widget
+class CounterApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Coaster<CounterModel, CounterMessage>(
+        init: CounterModel(count: 0),
+        update: update,
+        view: view,
+      ),
+    );
+  }
+}
 ```
 
-## Additional information
+### Advanced Features
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+For more advanced examples including:
+- Command pattern for side effects
+- Subscription system for event handling
+- Complex state management
+
+Please check out our [example directory](https://github.com/constacts/coaster/tree/main/example) for complete examples.
+
+
+
+## Contributing
+
+We welcome contributions! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
