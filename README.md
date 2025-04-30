@@ -11,19 +11,26 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
+# Coaster
 ![기능 개요](doc/images/teacoaster_logo_clean.png)
+
+A Flutter implementation of The Elm Architecture (TEA) pattern, inspired by the Elm programming language.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Model-View-Update (MVU) architecture pattern
+- Command pattern for side effects
+- Subscription system for event handling
 
-## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+## Getting Started
+
+Add the package to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  coaster: ^0.0.1
+```
 
 ## Usage
 
