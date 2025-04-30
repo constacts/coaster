@@ -14,7 +14,7 @@ and the Flutter guide for
 TODO: Put a short description of the package here that helps potential users
 know whether this package might be useful for them.
 
-![기능 개요](docs/images/teacoaster_logo_clean.png)
+![기능 개요](doc/images/teacoaster_logo_clean.png)
 
 ## Features
 
