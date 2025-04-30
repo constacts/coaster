@@ -14,7 +14,7 @@ and the Flutter guide for
 # TEA Coaster
 
 <div style="display: flex; align-items: center;">
-    <img src="doc/images/teacoaster_logo_clean.png" alt="기능 개요" style="width: 100px; height: auto;">
+    <img src="doc/images/teacoaster_logo_clean.png" alt="기능 개요" style="width: 270px; height: auto;">
     <div style="margin-left: 20px;">TEA <span style="background-color: #f6e5c9; padding: 2px 4px; border-radius: 4px;">Coaster</span> is a Flutter package that implements The Elm Architecture (TEA) pattern, bringing the elegance of Elm's architecture to Flutter development.</div>
 </div>
 
