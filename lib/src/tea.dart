@@ -1,7 +1,6 @@
 import 'dart:async';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 abstract class Cmd<Msg> {
   Future<Msg?> execute();
@@ -90,7 +89,7 @@ abstract class TeaState<T extends StatefulWidget, Model, Msg,
       _setupSubscription();
     }
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      // 즉시 커맨드를 시작하면 화면 전환 애니메이션에 영향을 줄 수 있어서 100ms 뒤에 실행
+      // Delaying command execution by 100ms to avoid affecting screen transition animations
       Future.delayed(const Duration(milliseconds: 100), () {
         final cmd = program.cmd;
         if (cmd != null) {

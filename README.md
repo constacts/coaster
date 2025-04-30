@@ -11,10 +11,13 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-# Coaster
-![기능 개요](doc/images/teacoaster_logo_clean.png)
+# TEA Coaster
 
-A Flutter implementation of The Elm Architecture (TEA) pattern, inspired by the Elm programming language.
+<div style="display: flex; align-items: center;">
+    <img src="doc/images/teacoaster_logo_clean.png" alt="기능 개요" style="width: 100px; height: auto;">
+    <div style="margin-left: 20px;">TEA <span style="background-color: #f6e5c9; padding: 2px 4px; border-radius: 4px;">Coaster</span> is a Flutter package that implements The Elm Architecture (TEA) pattern, bringing the elegance of Elm's architecture to Flutter development.</div>
+</div>
+
 
 ## Features
 
