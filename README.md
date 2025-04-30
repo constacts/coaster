@@ -32,7 +32,7 @@ Add the package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  coaster: ^0.0.1
+  coaster: ^0.0.2
 ```
 
 ## Usage
